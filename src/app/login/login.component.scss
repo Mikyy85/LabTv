@@ -1,0 +1,37 @@
+
+
+form {
+  color: white;
+  margin: 0 auto;
+  padding-top: 4em;
+  #login {
+    margin: auto;
+    padding: 2em 0;
+    width: 400px;
+
+    // flex
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+
+    border: 1px solid #3f51b5;
+
+
+    background-color: #6271c3;
+
+    h3 {
+      font-weight: bold;
+      font-size: 2rem;
+    }
+
+    div {
+      mat-form-field {
+        margin: 0.5rem auto;
+        width: 250px;
+      }
+    }
+   
+  }
+}
+
+

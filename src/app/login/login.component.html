@@ -1,0 +1,27 @@
+<div class="closeWindow">
+  <a routerLink="">
+    <mat-icon onClick="" class="">close</mat-icon>
+  </a>
+</div>
+<form [formGroup]="loginForm" (ngSubmit)="validationData()">
+  <div id="login" class="std-box">
+    <h3>ACCEDI</h3>
+    <div>
+      <mat-form-field>
+        <mat-label>Email</mat-label>
+        <input matInput placeholder="Inserisci un email" name="email" formControlName="email" required>
+        <mat-error *ngIf="email && email.invalid">{{getErrorMail()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <div>
+      <mat-form-field>
+        <mat-label>Password</mat-label>
+        <input matInput placeholder="Inserisci una password" name="password" formControlName="password" type="password"
+          required>
+        <mat-error *ngIf="password && password.invalid">{{getErrorPassword()}}</mat-error>
+      </mat-form-field>
+    </div>
+    <button mat-raised-button color="Basic">Login</button>
+    <app-login-with></app-login-with>
+  </div>
+</form>

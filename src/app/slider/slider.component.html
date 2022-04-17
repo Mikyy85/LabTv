@@ -1,0 +1,9 @@
+<h3>{{sliderHeader}}</h3>
+<owl-carousel-o id="slider" [options]="myOption">
+  <ng-template *ngFor="let data of sliderData " carouselSlide>
+    <div class="container" (click)="showPopup(data)">
+      <img src="{{data.image}}">
+      <h3>{{this.data.title}}</h3>
+    </div>
+  </ng-template>
+</owl-carousel-o>

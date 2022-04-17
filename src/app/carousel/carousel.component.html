@@ -1,0 +1,15 @@
+<div>
+  <owl-carousel-o id="slider" [options]="myOption">
+    <ng-template *ngFor="let data of comingSoonData" carouselSlide>
+      <pre>{{data}} | JSON</pre>
+    </ng-template>
+  </owl-carousel-o>
+  <aside>
+    <h3>In Arrivo:</h3>
+    <div id="card">
+      <div class="content">
+        <app-mini-card id="mini-card" *ngFor="let data of comingSoonData" [comingSoon]="data"></app-mini-card>
+      </div>
+    </div>
+  </aside>
+</div>

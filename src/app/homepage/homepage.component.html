@@ -1,0 +1,29 @@
+<app-nav-bar (hide)="hideAll($event)"></app-nav-bar>
+<app-carousel *ngIf="!this.hideItem">
+</app-carousel>
+
+
+<div id="sliders" *ngIf="!this.hideItem">
+
+  <div class="container-slider">
+    <app-slider *ngIf="this.top25MoviesList" [sliderData]="top25MoviesList" [sliderHeader]="'Migliori Film'">
+    </app-slider>
+  </div>
+
+  <div class="container-slider">
+    <app-slider *ngIf="this.top25TVsList" [sliderData]="top25TVsList" [sliderHeader]="'Migliori SerieTv'"></app-slider>
+  </div>
+
+  <div class="container-slider">
+    <app-slider *ngIf="this.mostPopularMoviesList" [sliderData]="mostPopularMoviesList"
+      [sliderHeader]="'Film Popolari'">
+    </app-slider>
+  </div>
+
+  <div class="container-slider">
+    <app-slider *ngIf="this.mostPopularTVsList" [sliderData]="mostPopularTVsList" [sliderHeader]="'SerieTv Popolari'">
+    </app-slider>
+  </div>
+</div>
+<br>
+<app-footer></app-footer>

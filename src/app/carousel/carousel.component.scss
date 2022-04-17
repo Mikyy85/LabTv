@@ -1,0 +1,48 @@
+* {
+  max-height: 400px;
+}
+
+div {
+  display: flex;
+
+  #slider {
+    width: 65%;
+    height: 100%;
+    }
+  }
+
+  aside {
+    height: 100%;
+    padding: 0 0.5em;
+    width: 40%;
+    #card {
+      display: flex;
+
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+  }
+
+
+
+@media (max-width: 900px) {
+
+  div {
+    display: block;
+
+    #slider {
+      width: 100%;
+    }
+
+    aside {
+      display: none;
+    }
+  }
+
+
+
+}

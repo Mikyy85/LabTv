@@ -1,0 +1,31 @@
+<nav>
+  <div id="left-nav" class="logo">
+    <img (click)="showHome()" [src]='"/../assets/images/LabTvLogoMini.png"' alt="Logo LabTv">
+  </div>
+
+  <div id="central-nav">
+    <div id="search">
+      <div>
+        <mat-form-field>
+          <mat-label>Cerca</mat-label>
+          <input [(ngModel)]="searchTherm" #SearchInput matInput placeholder="{{textPlaceholder}}" name="search"
+            class="form-control">
+        </mat-form-field>
+      </div>
+      <mat-icon class="mat-18 search-btn" (click)="searchVideo()">search</mat-icon>
+    </div>
+  </div>
+
+  <div id="right-nav">
+    <div id="login">
+      <a class="" routerLink="login">Login</a>
+    </div>
+  </div>
+</nav>
+
+<div *ngIf="this.searching" class="grid" id="resultSearch">
+  <mat-icon onClick="" class="">close</mat-icon>
+  <app-card-result [data]="result" *ngFor="let result of this.results">
+  </app-card-result>
+
+</div>

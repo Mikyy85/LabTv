@@ -1,1 +1,88 @@
-/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  font-family: Roboto, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  padding: 0;
+  margin: 0 !important;
+}
+
+html{
+  position: relative;
+  min-height: 100%;
+  background-image: radial-gradient(circle 963px at 5.4% 11%, rgba(241, 229, 114, 1) 100.2%, rgba(250, 234, 11, 1) 100.2%);
+}
+
+
+
+body {
+  margin: 0;
+}
+MatFormField ::ng-deep .mat-focused .mat-form-field-label {
+  /*change color of label*/
+  color: white !important;
+}
+
+.mat-focused .mat-form-field-ripple {
+  background-color: white !important;
+}
+.mat-focused .mat-form-field-label {
+  color: white !important;
+}
+
+mat-label {
+color: white;
+}
+
+.std-box {
+  border-radius: 20px 50px;
+  background-image: radial-gradient(circle farthest-corner at 10% 20%, rgba(7, 121, 222, 1) 0%, rgba(20, 72, 140, 1) 90%);
+}
+
+.std-button {
+  padding: 6px 20px;
+  margin: 0.5em 0.2em;
+
+  border: 3px solid white;
+  border-radius: 20px;
+
+}
+
+.std-button:hover {
+  background-color: white;
+  color: #3f51b5;
+}
+
+.closeWindow {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-weight: bolder;
+  margin: 0;
+  padding: 0;
+
+  mat-icon {
+    font-size: 35px;
+    font-weight: bold;
+    color: red;
+  }
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}

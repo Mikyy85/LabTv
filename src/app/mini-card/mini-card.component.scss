@@ -1,0 +1,33 @@
+#card {
+  display: flex;
+  align-items: center;
+  height: 100px;
+  margin-bottom: 0.3em;
+
+  border: 2px solid #219EBC;
+  border-radius: 10px;
+  background-color: rgba(2,48,71, 0.4);
+  color: white;
+
+  h3, p{
+    padding-left: 0.5em;
+  }
+}
+
+img {
+  height: 90px;
+  max-width: 70px;
+  padding-left: 0.5em;
+}
+
+.inner-content {
+  display: flex;
+  flex-direction: row;
+  margin-left: 5px;
+}
+
+.icon {
+  border: 1px solid #fff;
+  border-radius: 50%;
+  cursor: pointer;
+}
