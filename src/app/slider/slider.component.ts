@@ -7,7 +7,9 @@ import {
   OnInit,
   Output,
 } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { OwlOptions } from 'ngx-owl-carousel-o';
+import { PopupMovieComponent } from '../popup-movie/popup-movie.component';
 
 @Component({
   selector: 'app-slider',
@@ -23,7 +25,7 @@ export class SliderComponent implements OnInit {
 
   click: boolean = true;
 
-  constructor() {}
+  constructor(private dialog: MatDialog) {}
 
   ngOnInit(): void {}
 
@@ -36,7 +38,7 @@ export class SliderComponent implements OnInit {
     dots: false,
     navSpeed: 400,
     lazyLoad: true,
-    navText: ['Indietro', 'Avanti'],
+    navText: ['<', '>'],
     responsive: {
       0: {
         items: 1,
@@ -64,6 +66,10 @@ export class SliderComponent implements OnInit {
 
   showPopup(data: any) {
     if (!this.click) return;
-    console.log(data);
+    this.dialog.open(PopupMovieComponent, {
+      data: {
+        data: data,
+      },
+    });
   }
 }

@@ -40,4 +40,10 @@ export class ImdbApiService {
     const lastValue: string = link.split('?v=').pop();
     return root + lastValue;
   }
+
+  fullCast(id:string) {
+    return this.http.get<any>(
+      `${this.rootLink}fullCast/${this.key}/${id}`
+    );
+  }
 }

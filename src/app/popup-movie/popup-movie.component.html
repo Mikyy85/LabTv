@@ -1,0 +1,33 @@
+<div id="main-content">
+  <img src="{{this.data.data.image}}" alt="">
+  <div class="data">
+    <h3>{{this.data.data.title}}</h3>
+    <h5>{{this.data.data.fullTitle}}</h5>
+    <p><span class="bold">Regia</span> Quentin</p>
+    <div class="vote">
+      <span>Voto: {{this.data.data.imDbRating}}</span>
+      <i class="fa-solid fa-star"></i>
+    </div>
+    <div class="cast">
+      <p *ngIf="!this.active">Cast:</p>
+      <div>
+        <div *ngIf="!this.active">
+          <p>{{this.data.data.crew}}</p>
+        </div>
+        <div *ngIf="this.active && this.fullCast">
+          <p>Diretto da:</p>
+          <div *ngFor="let director of this.fullCast.directors">
+            <span>{{director.name}}</span>
+          </div>
+          <div class="actors">
+            <span>Attori :</span>
+            <div class="attore" *ngFor="let actor of this.fullCast.actors">
+              <span>{{actor.name}}</span>
+            </div>
+          </div>
+        </div>
+        <button mat-raised-button (click)="moreInfo()">{{this.textButton}}</button>
+      </div>
+    </div>
+  </div>
+</div>

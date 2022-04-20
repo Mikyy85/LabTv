@@ -1,0 +1,52 @@
+img {
+  min-width: 100px;
+  max-width: 250px;
+}
+
+.bold, h3 {
+  font-weight: 700;
+}
+
+#main-content{
+  min-width: 400px;
+  display: flex;
+  flex-direction: row;
+
+  h3, h5, p, .vote {
+    padding-bottom: 0.3em;
+    margin: 0;
+  }
+
+  .data {
+    margin-left: 0.6em;
+  }
+  .cast {
+    display: flex;
+    div p {
+      margin-left: 0.6em;
+    }
+  }
+
+}
+
+#showTrailer {
+  display: flex;
+  align-items: center;
+  margin-top:0.5em;
+}
+
+.icon {
+  color: black;
+}
+
+.actors {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.attore::after {
+  content: ', ';
+}
+.actors:last-child::after {
+  content: "";
+}

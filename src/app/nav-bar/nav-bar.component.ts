@@ -7,7 +7,7 @@ import { ImdbApiService } from '../imdb-api.service';
   templateUrl: './nav-bar.component.html',
   styleUrls: ['./nav-bar.component.scss'],
 })
-export class NavBarComponent implements OnInit{
+export class NavBarComponent implements OnInit {
   textPlaceholder: string = 'Cosa vuoi cercare?';
   searchTherm: string = '';
   results: any = [];
@@ -36,6 +36,11 @@ export class NavBarComponent implements OnInit{
 
   sendHome() {
     this.hide.emit(this.searching);
+  }
+
+  reset() {
+    this.searching = false;
+    this.sendHome();
   }
 
   showHome() {

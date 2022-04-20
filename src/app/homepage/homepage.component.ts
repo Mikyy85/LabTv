@@ -22,9 +22,9 @@ export class HomepageComponent implements OnInit {
 
   callAllData() {
     //TODO remove comment
-    //this.top25Movies();
-    this.top25TVs();
-    //this.mostPopularMovies();
+    this.top25Movies();
+    // this.top25TVs();
+    // this.mostPopularMovies();
     // this.mostPopularTVs();
   }
 

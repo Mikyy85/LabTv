@@ -1,3 +1,9 @@
+#pointer {
+  display: flex;
+  justify-content: center;
+  font-size: 7em;
+}
+
 footer{
   background-color: #fb8500;
   color: white;
@@ -25,7 +31,7 @@ footer{
           justify-content: flex-end;
           i {
             padding-left: 0.5em;
-            font-size: 1.5em;
+            font-size: 1.5em  !important;
             cursor: pointer;
           };
         }
@@ -82,6 +88,14 @@ mat-form-field {
 
 .internal-input {
   width: 100%;
+}
+
+#contatti {
+  display: flex;
+  justify-content: flex-start;
+  i {
+    margin-right: 0.5em;
+  }
 }
 
 @media screen and (max-width: 800px){

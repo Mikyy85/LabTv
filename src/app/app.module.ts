@@ -29,6 +29,7 @@ import { CardResultComponent } from './card-result/card-result.component';
 import { SliderComponent } from './slider/slider.component';
 import { FooterComponent } from './footer/footer.component';
 import { InfoPopupComponent } from './info-popup/info-popup.component';
+import { PopupMovieComponent } from './popup-movie/popup-movie.component';
 
 @NgModule({
   declarations: [
@@ -45,6 +46,7 @@ import { InfoPopupComponent } from './info-popup/info-popup.component';
     SliderComponent,
     FooterComponent,
     InfoPopupComponent,
+    PopupMovieComponent,
   ],
   imports: [
     BrowserModule,

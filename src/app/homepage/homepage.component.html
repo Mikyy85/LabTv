@@ -6,12 +6,9 @@
 <div id="sliders" *ngIf="!this.hideItem">
 
   <div class="container-slider">
-    <app-slider *ngIf="this.top25MoviesList" [sliderData]="top25MoviesList" [sliderHeader]="'Migliori Film'">
+    <app-slider *ngIf="this.top25MoviesList" [sliderData]="top25MoviesList"
+      [sliderHeader]="'Film acclamati dalla Critica'">
     </app-slider>
-  </div>
-
-  <div class="container-slider">
-    <app-slider *ngIf="this.top25TVsList" [sliderData]="top25TVsList" [sliderHeader]="'Migliori SerieTv'"></app-slider>
   </div>
 
   <div class="container-slider">
@@ -21,7 +18,12 @@
   </div>
 
   <div class="container-slider">
-    <app-slider *ngIf="this.mostPopularTVsList" [sliderData]="mostPopularTVsList" [sliderHeader]="'SerieTv Popolari'">
+    <app-slider *ngIf="this.top25TVsList" [sliderData]="top25TVsList" [sliderHeader]="'SerieTv Popolari'"></app-slider>
+  </div>
+
+  <div class="container-slider">
+    <app-slider *ngIf="this.mostPopularTVsList" [sliderData]="mostPopularTVsList"
+      [sliderHeader]="'SerieTv acclamate dalla Critica'">
     </app-slider>
   </div>
 </div>
