@@ -41,9 +41,21 @@ export class ImdbApiService {
     return root + lastValue;
   }
 
-  fullCast(id:string) {
+  fullCast(id: string) {
+    return this.http.get<any>(`${this.rootLink}fullCast/${this.key}/${id}`);
+  }
+
+  getSeasonEpisodes(id: string) {
     return this.http.get<any>(
-      `${this.rootLink}fullCast/${this.key}/${id}`
+      `${this.rootLink}SeasonEpisodes/${this.key}/${id}`
     );
+  }
+
+  getAllInfo(id: string) {
+    return this.http.get<any>(`${this.rootLink}Title/${this.key}/${id}`);
+  }
+
+  getTrailer(id: string) {
+    return this.http.get<any>(`${this.rootLink}Trailer/${this.key}/${id}`);
   }
 }

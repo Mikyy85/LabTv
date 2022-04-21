@@ -2,7 +2,6 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ImdbApiService } from '../imdb-api.service';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { ShowTrailerComponent } from '../show-trailer/show-trailer.component';
-import { EmbedPipe } from '../embed.pipe';
 
 @Component({
   selector: 'app-mini-card',

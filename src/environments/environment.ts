@@ -5,8 +5,9 @@
 export const environment = {
   production: false,
   ROOT_API_LINK: 'https://imdb-api.com/It/API/',
-  API_KEY: 'k_vkmayl7d',
-  //API_KEY: 'k_gqk37339',
+  //API_KEY: 'k_vkmayl7d',
+  // API_KEY: 'k_gqk37339',
+  API_KEY: 'k_pxnf0t07',
 };
 
 /*

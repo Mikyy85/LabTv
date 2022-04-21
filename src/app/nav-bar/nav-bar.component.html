@@ -23,9 +23,10 @@
   </div>
 </nav>
 
+
 <div *ngIf="this.searching" class="grid" id="resultSearch">
-  <a routerLink="">
-    <mat-icon (click)="reset()" id="close">close</mat-icon>
+  <a *ngIf="this.searching" routerLink="" id="close">
+    <mat-icon (click)="reset()">close</mat-icon>
   </a>
   <app-card-result [data]="result" *ngFor="let result of this.results">
   </app-card-result>

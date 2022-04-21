@@ -23,6 +23,10 @@ export class SliderComponent implements OnInit {
 
   @Input() sliderData: any = [];
 
+  @Input() isMovie: boolean = false;
+
+  @Input() isTvs: boolean = false;
+
   click: boolean = true;
 
   constructor(private dialog: MatDialog) {}
@@ -61,7 +65,6 @@ export class SliderComponent implements OnInit {
 
   drag($event: CdkDragMove<any>) {
     this.click = false;
-    console.log('backgrount color red');
   }
 
   showPopup(data: any) {
@@ -69,6 +72,8 @@ export class SliderComponent implements OnInit {
     this.dialog.open(PopupMovieComponent, {
       data: {
         data: data,
+        isMovie: this.isMovie,
+        isTvs: this.isTvs,
       },
     });
   }

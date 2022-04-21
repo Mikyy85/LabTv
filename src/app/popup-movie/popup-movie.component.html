@@ -1,26 +1,66 @@
 <div id="main-content">
-  <img src="{{this.data.data.image}}" alt="">
+  <!-- <img src="{{this.data.data.image}}" alt=""> -->
   <div class="data">
     <h3>{{this.data.data.title}}</h3>
     <h5>{{this.data.data.fullTitle}}</h5>
-    <p><span class="bold">Regia</span> Quentin</p>
     <div class="vote">
       <span>Voto: {{this.data.data.imDbRating}}</span>
       <i class="fa-solid fa-star"></i>
     </div>
+
+
+    <div *ngIf="this.tvsInfo && this.isTvs">
+
+      <div>
+        <span class="bold">Numero Stagioni:</span>
+        <p>{{this.tvsInfo.numSeason}}</p>
+      </div>
+
+      <div>
+        <span class="bold">Generi:</span>
+        <p>{{this.tvsInfo.genres}}</p>
+      </div>
+
+      <div class="plot">
+        <span class="bold">Trama:</span>
+        <p>{{this.tvsInfo.plot}}</p>
+      </div>
+    </div>
+
+
+    <div *ngIf="this.movieInfo && this.isMovie">
+
+      <div>
+        <span class="bold">Lunghezza</span>
+        <p>{{this.movieInfo.min}}</p>
+      </div>
+
+      <div>
+        <span class="bold">Generi:</span>
+        <p>{{this.movieInfo.genres}}</p>
+      </div>
+
+      <div class="plot">
+        <span class="bold">Trama:</span>
+        <p>{{this.movieInfo.plot}}</p>
+      </div>
+    </div>
+
+
     <div class="cast">
-      <p *ngIf="!this.active">Cast:</p>
+      <p class="bold" *ngIf="!this.active">Cast:</p>
       <div>
         <div *ngIf="!this.active">
           <p>{{this.data.data.crew}}</p>
         </div>
         <div *ngIf="this.active && this.fullCast">
-          <p>Diretto da:</p>
-          <div *ngFor="let director of this.fullCast.directors">
+          <span class="bold">Diretto da:</span>
+          <div class="attore" *ngFor="let director of this.fullCast.directors">
             <span>{{director.name}}</span>
           </div>
+          <span class="bold">Attori :</span>
           <div class="actors">
-            <span>Attori :</span>
+
             <div class="attore" *ngFor="let actor of this.fullCast.actors">
               <span>{{actor.name}}</span>
             </div>

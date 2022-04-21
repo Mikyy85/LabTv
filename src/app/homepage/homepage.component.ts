@@ -21,11 +21,10 @@ export class HomepageComponent implements OnInit {
   ngOnInit(): void {}
 
   callAllData() {
-    //TODO remove comment
     this.top25Movies();
-    // this.top25TVs();
-    // this.mostPopularMovies();
-    // this.mostPopularTVs();
+    this.top25TVs();
+    this.mostPopularMovies();
+    this.mostPopularTVs();
   }
 
   top25Movies() {

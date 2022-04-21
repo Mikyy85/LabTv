@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { OwlOptions } from 'ngx-owl-carousel-o';
 import { ImdbApiService } from '../imdb-api.service';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-carousel',
@@ -9,10 +10,16 @@ import { ImdbApiService } from '../imdb-api.service';
 })
 export class CarouselComponent implements OnInit {
   comingSoonData: any;
+  trailers: any[] = [];
+  inTeatro: any;
+  isReady: boolean = false;
 
-  constructor(private ImdbService: ImdbApiService) {
-    //TODO remove comment
+  constructor(
+    private ImdbService: ImdbApiService,
+    private sanitizer: DomSanitizer
+  ) {
     this.getComingSoon();
+    this.getInTheater();
   }
 
   myOption: OwlOptions = {
@@ -22,7 +29,7 @@ export class CarouselComponent implements OnInit {
     pullDrag: true,
     dots: true,
     navSpeed: 700,
-    navText: ['', ''],
+    navText: ['<', '>'],
     responsive: {
       0: {
         items: 1,
@@ -34,19 +41,17 @@ export class CarouselComponent implements OnInit {
         items: 1,
       },
       940: {
-        items: 2,
+        items: 1,
       },
     },
     nav: true,
   };
 
-  comingSoon: any[];
-
   ngOnInit(): void {}
 
   getComingSoon() {
     this.ImdbService.getOther('ComingSoon').subscribe((data) => {
-      this.comingSoonData = data.items.slice(5, 8).map((d) => {
+      this.comingSoonData = data.items.slice(0, 3).map((d) => {
         return {
           id: d.id,
           title: d.title,
@@ -55,5 +60,23 @@ export class CarouselComponent implements OnInit {
         };
       });
     });
+  }
+
+  getInTheater() {
+    this.ImdbService.getOther('InTheaters').subscribe((data) => {
+      this.inTeatro = data.items.slice(0, 2).map((d) => {
+        this.getTrailer(d.id);
+      });
+    });
+  }
+
+  getTrailer(id: string) {
+    this.ImdbService.getTrailer(id).subscribe((data: any) =>
+      this.trailers.push(this.linkURL(data.linkEmbed))
+    );
+  }
+
+  linkURL(link: string) {
+    return this.sanitizer.bypassSecurityTrustHtml(link);
   }
 }

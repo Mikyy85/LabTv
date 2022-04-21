@@ -1,6 +1,6 @@
 img {
-  min-width: 100px;
-  max-width: 250px;
+  width: 300px;
+  height: auto;
 }
 
 .bold, h3 {
@@ -39,8 +39,9 @@ img {
   color: black;
 }
 
-.actors {
+.attore {
   display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
 }
 

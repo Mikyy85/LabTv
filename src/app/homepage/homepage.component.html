@@ -6,24 +6,25 @@
 <div id="sliders" *ngIf="!this.hideItem">
 
   <div class="container-slider">
-    <app-slider *ngIf="this.top25MoviesList" [sliderData]="top25MoviesList"
+    <app-slider *ngIf="this.top25MoviesList" [sliderData]="top25MoviesList" [isMovie]="true"
       [sliderHeader]="'Film acclamati dalla Critica'">
     </app-slider>
   </div>
 
   <div class="container-slider">
-    <app-slider *ngIf="this.mostPopularMoviesList" [sliderData]="mostPopularMoviesList"
+    <app-slider *ngIf="this.mostPopularMoviesList" [sliderData]="mostPopularMoviesList" [isMovie]="true"
       [sliderHeader]="'Film Popolari'">
     </app-slider>
   </div>
 
   <div class="container-slider">
-    <app-slider *ngIf="this.top25TVsList" [sliderData]="top25TVsList" [sliderHeader]="'SerieTv Popolari'"></app-slider>
+    <app-slider *ngIf="this.top25TVsList" [sliderData]="top25TVsList" [sliderHeader]="'SerieTv Popolari'"
+    [isTvs]="true"></app-slider>
   </div>
 
   <div class="container-slider">
     <app-slider *ngIf="this.mostPopularTVsList" [sliderData]="mostPopularTVsList"
-      [sliderHeader]="'SerieTv acclamate dalla Critica'">
+      [sliderHeader]="'SerieTv acclamate dalla Critica'" [isTvs]="true">
     </app-slider>
   </div>
 </div>
